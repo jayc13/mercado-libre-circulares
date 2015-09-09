@@ -1,0 +1,52 @@
+<?php
+// Scripts js
+echo $this->headScript()
+   ->prependFile($this->basePath('js/module/application/index/index.js'));
+?>
+<div class="row">
+    <br>
+    <div class="col-md-12 center-block">
+        <legend>Calcular Primos Circulares</legend>
+        <div class="col-lg-6 col-lg-offset-3">
+            <p class="">Programa para verificar si un número es primo circular</p>
+            <div class="form-group">
+                <label class="col-lg-3 control-label panel-title">Ingrese valor: </label>
+                <div class="col-lg-6">
+                    <input type="number" class="form-control" id="numero" name="numero" required>
+                </div>
+                <button class="btn btn-primary" id="verificar" onclick="verificar_primo('<?php echo $this->basePath() ?>');" title="Verificar"><?php echo $this->translate('Verificar') ?></button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12 center-block">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="form-group">
+                <p>Click en el siguiente botón para verificar que cantidad números por debajo del un millón son
+                primos circulares.</p>
+            </div>
+            <button class="btn btn-primary center-block" onclick="verificar_circular('<?php echo $this->basePath() ?>');" id="buscar" title="Buscar Primos"><?php echo $this->translate('Buscar Primos') ?></button>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12 center-block" id="container_circulares">
+    </div>
+</div>
+
+<div class="modal fade" id="modal_add" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" id="header_modal"></div>
+            <div class="modal-body" id="modal_body"> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
